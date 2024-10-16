@@ -12,14 +12,13 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.onboardingBackColor,
       body: Column(
         children: [
           Expanded(
             flex:3,
             child: IntroductionScreen(
               key: introKey,
-              globalBackgroundColor: AppColors.onboardingBackColor,
+              globalBackgroundColor: AppColors.scaffoldBackColor,
               pages: [
                 PageViewModel(
                   title: "",
@@ -144,7 +143,7 @@ class OnboardingScreen extends StatelessWidget {
                       backgroundColor: AppColors.primaryColor,
                     ),
                       onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>LoginScreen()),(route) => false,);
                       },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 15),
@@ -157,7 +156,7 @@ class OnboardingScreen extends StatelessWidget {
                     Text("Don't have an account ?",style: AppStyles.onboardingBottomText,),
                     SizedBox(width: 6,),
                     InkWell(
-                      onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>SignupScreen()));},
+                      onTap: (){Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>SignupScreen()),(route) => false,);},
                         child: Text("sign up",style: AppStyles.onboardingBottomText.copyWith(color: AppColors.iconColor),))],
                 )
               ],

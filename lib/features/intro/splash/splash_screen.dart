@@ -13,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState(){
     super.initState();
     Timer(Duration(seconds: 3),
-            ()=>Navigator.push(context,MaterialPageRoute(builder: (context)=> OnboardingScreen(),))
+            ()=>Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context)=> OnboardingScreen()),(route) => false,)
 
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vital_ease/core/themes/colors/app_colors.dart';
 
 import 'features/intro/splash/splash_screen.dart';
 
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'VitalEase',
       theme: ThemeData(
+        scaffoldBackgroundColor:AppColors.scaffoldBackColor ,
         textTheme: GoogleFonts.dmSansTextTheme(
           Theme.of(context).textTheme,
         ),
